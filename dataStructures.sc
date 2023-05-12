@@ -33,4 +33,59 @@ println(shipList(2))
 println(shipList.head)
 println(shipList.tail)
 
-for 
+for (ship <- shipList) {println(ship)} 
+
+// Map()
+val backwardShips = shipList.map((ship: String) => {ship.reverse})
+println(backwardShips)
+
+// Reduce()
+
+val numberList = List(1, 2, 3, 4, 5)
+val sum = numberList.reduce( (x : Int, y: Int) => x + y )
+
+println(sum)
+
+//filter()
+val iHateFives = numberList.filter( (x: Int) => x!= 5)
+println(iHateFives)
+val iHateThrees = numberList.filter( _ != 3)
+println(iHateThrees)
+
+
+//Concatenate lists
+val moreNumbers = List(6, 7, 8)
+val lotsOfNumbers = numberList ++ moreNumbers
+println(lotsOfNumbers)
+
+val reversed = numberList.reverse
+println(reversed)
+
+val sorted = reversed.sorted
+println(sorted)
+
+val lotsOfDuplicates = numberList ++ numberList
+
+//Distinct values in list
+val distinctValues = lotsOfDuplicates.distinct
+println(distinctValues)
+
+val maxValue = numberList.max 
+println(maxValue)
+
+val total = numberList.sum
+println(total)
+
+val hasThree = iHateThrees.contains(3)
+println(hasThree)
+
+
+// MAPs
+val shipMap = Map("Kirk" -> "Enterprise", "picard" -> "Enterprise-D", "Sisko" -> "Deep Space nine", "Janeway" -> "Voyager")
+println(shipMap("Janeway"))
+
+println(shipMap.contains("Archer"))
+
+val archerShip = util.Try(shipMap("Archer")) getOrElse "Unknown"
+println(archerShip)
+
